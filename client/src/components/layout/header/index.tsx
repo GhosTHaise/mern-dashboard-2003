@@ -31,7 +31,13 @@ export const Header: React.FC = () => {
   const showUserInfo = user && (user.name || user.avatar);
 
   return (
-    <AppBar color="default" position="sticky" elevation={1}>
+    <AppBar color="default" 
+    position="sticky" 
+    elevation={0}
+    sx={{
+      background : "#fcfcfc"
+    }}
+    >
       <Toolbar>
         <Stack
           direction="row"
@@ -39,13 +45,13 @@ export const Header: React.FC = () => {
           justifyContent="flex-end"
           alignItems="center"
         >
-          <IconButton
+          {/* <IconButton
             onClick={() => {
               setMode();
             }}
           >
             {mode === "dark" ? <LightModeOutlined /> : <DarkModeOutlined />}
-          </IconButton>
+          </IconButton> */}
           <FormControl sx={{ m: 1, minWidth: 120 }}>
             <Select
               disableUnderline
