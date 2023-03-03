@@ -26,7 +26,18 @@ import { useTranslation } from "react-i18next";
 import { RefineKbarProvider } from "@pankod/refine-kbar";
 import { ColorModeContextProvider } from "contexts";
 import { Title, Sider, Layout, Header } from "components/layout";
-import { Login } from "pages/login";
+import { 
+  Login,
+  Home,
+  Agents,
+  MyProfile,
+  PropertyDetails,
+  AllProperties,
+  CreateProperty,
+  AgentProfile,
+  EditProperty
+} from "pages";
+
 import { CredentialResponse } from "interfaces/google";
 import { parseJwt } from "utils/parse-jwt";
 import { OffLayoutArea } from "components/offLayoutArea";
@@ -153,6 +164,7 @@ function App() {
             LoginPage={Login}
             i18nProvider={i18nProvider}
             OffLayoutArea={OffLayoutArea}
+            DashboardPage={Home}
           />
         </RefineKbarProvider>
       </RefineSnackbarProvider>
