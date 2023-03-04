@@ -1,8 +1,9 @@
 import React from 'react'
+import { Box,Typography,Stack } from '@pankod/refine-mui'
+import { PieChartProps } from 'interfaces/home'
 
-type Props = {}
 
-const PieChart = (props: Props) => {
+const PieChart = ({title,value,series,colors} : PieChartProps) => {
   return (
     <div>PieChart</div>
   )
