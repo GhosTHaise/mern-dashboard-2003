@@ -58,7 +58,9 @@ const Home = (props: Props) => {
         direction={{
             xs : "column",
             lg : "row"
-        }}>
+        }}
+        gap={4}
+        >
             <TotalRevenue/>
             <PropertyReferrals/>
         </Stack>
