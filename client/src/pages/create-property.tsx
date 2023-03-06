@@ -6,7 +6,10 @@ import Form from "components/common/Form"
 type Props = {}
 
 const CreateProperty = (props: Props) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const {data : user} = useGetIdentity();
+  const [propertyImage, setPropertyImage] = useState({name : "",url : ""});
+  const {refineCore : {onFinish,formLoading},register,handleSubmit} = useForm()
   return (
     <div>create-property</div>
   )
