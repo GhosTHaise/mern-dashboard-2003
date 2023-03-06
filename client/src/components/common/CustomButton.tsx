@@ -1,6 +1,5 @@
 import { Button } from "@pankod/refine-mui"
 import { CustomButtonProps } from "interfaces/common"
-type Props = {}
 
 const CustomButton = ({type,title,backgroundColor,color,fullWidth,icon,handleClick}: CustomButtonProps) => {
   return (
