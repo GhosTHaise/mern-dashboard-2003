@@ -69,7 +69,24 @@ const Form = ({
                 Enter Description
               </FormHelperText>
               <TextareaAutosize
+                minRows={5}
+                required
+                placeholder='Write description'
+                color='info'
                 
+                style={{
+                  width:"100%",
+                  background : "transparent",
+                  fontSize : "16px",
+                  borderColor : "rgba(0,0,0,0.23)",
+                  borderRadius : 6,
+                  padding : 10,
+                  color : "#919191"
+
+                }}
+                {...register("description",{
+                  required : true 
+                })}
               />
             </FormControl>
           </form>
