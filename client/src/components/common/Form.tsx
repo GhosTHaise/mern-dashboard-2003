@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box,Typography,FormControl,FormHelperText,
-TextField,TextareaAutosize,Stack,Select,MenuItem,Button, fontSize } from '@pankod/refine-mui'
+TextField,TextareaAutosize,Stack,Select,MenuItem,Button } from '@pankod/refine-mui'
 
 import { FormProps } from 'interfaces/common'
 import CustomButton from './CustomButton'
@@ -166,6 +166,44 @@ const Form = ({
               })}
               />
             </FormControl>
+            <Stack 
+            direction="column"
+            gap="1"
+            justifyContent="center"
+            mb={2}
+            >
+                <Stack 
+                  direction="row" 
+                  gap={2}>
+                    <Typography
+                    color="#11142d"
+                    fontWeight={500}
+                    my="10px"
+                    >
+                      Property Photo
+                    </Typography>
+                    <Button
+                    component="label"
+                    sx={{
+                      width : "fit-content",
+                      color : "#2ed480",
+                      textTransform : "capitalize",
+                      fontSize : 16
+                    }}
+                    >
+                        Upload *
+                        <input 
+                          hidden
+                          accept='image/*'
+                          type="file"
+                          onChange={(e)=>{
+                            // @ts-ignore
+                            handleImageChange(e.target.files[0])
+                          }}
+                        />
+                    </Button>
+                </Stack>
+            </Stack>
           </form>
         </Box>
     </Box>
