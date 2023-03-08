@@ -42,7 +42,7 @@ const Form = ({
             <FormControl>
               <FormHelperText sx={{
                 fontWeight : 50,
-                margin : "10px",
+                margin : "10px 0",
                 fontSize : 16,
                 color : "#11142d"
               }}>
@@ -62,7 +62,7 @@ const Form = ({
             <FormControl>
               <FormHelperText sx={{
                 fontWeight : 50,
-                margin : "10px",
+                margin : "10px 0",
                 fontSize : 16,
                 color : "#11142d"
               }}>
@@ -124,7 +124,48 @@ const Form = ({
                   <MenuItem value="chalet" >Chalet</MenuItem>
                 </Select>
               </FormControl>
+              <FormControl>
+              <FormHelperText sx={{
+                fontWeight : 50,
+                margin : "10px 0",
+                fontSize : 16,
+                color : "#11142d"
+              }}>
+                Enter Property Price
+              </FormHelperText>
+              <TextField 
+              fullWidth
+              required
+              id='outlined-basic'
+              color='info'
+              variant='outlined'
+              type="number"
+              {...register("price",{
+                required : true
+              })}
+              />
+            </FormControl>
             </Stack>
+            <FormControl>
+              <FormHelperText sx={{
+                fontWeight : 50,
+                margin : "10px",
+                fontSize : 16,
+                color : "#11142d"
+              }}>
+                Enter Location
+              </FormHelperText>
+              <TextField 
+              fullWidth
+              required
+              id='outlined-basic'
+              color='info'
+              variant='outlined'
+              {...register("location",{
+                required : true
+              })}
+              />
+            </FormControl>
           </form>
         </Box>
     </Box>
