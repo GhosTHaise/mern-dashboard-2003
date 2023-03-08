@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box,Typography,FormControl,FormHelperText,
-TextField,TextareaAutosize,Stack,Select,MenuItem,Button } from '@pankod/refine-mui'
+TextField,TextareaAutosize,Stack,Select,MenuItem,Button, fontSize } from '@pankod/refine-mui'
 
 import { FormProps } from 'interfaces/common'
 import CustomButton from './CustomButton'
@@ -89,6 +89,42 @@ const Form = ({
                 })}
               />
             </FormControl>
+            <Stack 
+            direction="row"
+            gap={4}
+            >
+              <FormControl sx={{flex : 1}}>
+                <FormHelperText sx={{
+                  fontWeight : 500,
+                  margin : "10px 0",
+                  fontSize : 16,
+                  color : "#11142d"
+                }}>
+                    Select Property Type
+                </FormHelperText>
+                <Select
+                  variant="outlined"
+                  color="info"
+                  displayEmpty
+                  required
+                  inputProps={{"aria-label" : "Without label"}}
+                  defaultValue="aparment"
+                  {...register("propertyType",{
+                    required : true
+                  })}
+                >
+                  <MenuItem value="apartment" >Apartment</MenuItem>
+                  <MenuItem value="villa" >Villa</MenuItem>
+                  <MenuItem value="farmhouse" >Farmhouse</MenuItem>
+                  <MenuItem value="condos" >Farmhouse</MenuItem>
+                  <MenuItem value="farmhouse" >Condos</MenuItem>
+                  <MenuItem value="townhouse" >TownHouse</MenuItem>
+                  <MenuItem value="duplex" >Duplex</MenuItem>
+                  <MenuItem value="studio" >Studio</MenuItem>
+                  <MenuItem value="chalet" >Chalet</MenuItem>
+                </Select>
+              </FormControl>
+            </Stack>
           </form>
         </Box>
     </Box>
