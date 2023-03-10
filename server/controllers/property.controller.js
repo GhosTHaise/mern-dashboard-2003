@@ -1,0 +1,1 @@
+import Property from "../mongodb/models/property.js"
