@@ -49,7 +49,16 @@ const AllProperties = (props: Props) => {
         flexWrap : "wrap",
         gap : 3
       }}>
-        
+          {allProperties.map((property)=>( 
+              <PropertyCard 
+                key={property._id}
+                id={property._id}
+                title={property.title}
+                price={property.price}
+                location={property.location}
+                photo={property.photo}
+              />
+          ))}
       </Box>
     </Box>
   )
