@@ -9,7 +9,7 @@ const CreateProperty = (props: Props) => {
   const navigate = useNavigate();
   const {data : user} = useGetIdentity();
   const [propertyImage, setPropertyImage] = useState({name : "",url : ""});
-  const {refineCore : {onFinish,formLoading},register,handleSubmit} = useForm()
+  const {refineCore : {onFinish,formLoading},register,handleSubmit} = useForm();
   
   const handleImageChange = (file: File) => {
     const reader = (readFile: File) => new Promise<string>((resolve, reject) => {
@@ -24,7 +24,6 @@ const CreateProperty = (props: Props) => {
   const onFinishHandler = async (data : FieldValues) => {
       if(!propertyImage.name) return alert("Please select an image");
       await onFinish({...data,photo : propertyImage.url,email : user.email})
-
   };
 
   return (
