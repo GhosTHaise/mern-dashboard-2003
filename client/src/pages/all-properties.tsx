@@ -17,6 +17,8 @@ const AllProperties = (props: Props) => {
   } = useTable();
   
   const allProperties = data?.data ?? [];
+  console.log(allProperties);
+  
   if(isLoading) return <Typography>Loading...</Typography>
   if(isError) return <Typography>Error...</Typography>
   return (
@@ -44,7 +46,7 @@ const AllProperties = (props: Props) => {
       </Stack>
       <Box 
       mt="20px" 
-      style={{
+      sx={{
         display : "flex",
         flexWrap : "wrap",
         gap : 3
