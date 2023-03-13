@@ -13,7 +13,15 @@ const AllProperties = (props: Props) => {
         data,
         isLoading,
         isError
-    }
+    },
+    current,
+    setCurrent,
+    setPageSize,
+    pageCount,
+    sorter,
+    setSorter,
+    filters,
+    setFilters
   } = useTable();
   
   const allProperties = data?.data ?? [];
