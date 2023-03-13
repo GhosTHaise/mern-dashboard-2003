@@ -1,6 +1,6 @@
 import { Add } from '@mui/icons-material'
 import { useTable } from '@pankod/refine-core'
-import { Box,Stack,Typography } from '@pankod/refine-mui'
+import { Box,Stack,TextField,Typography,Select,MenuItem } from '@pankod/refine-mui'
 import { useNavigate } from '@pankod/refine-react-router-v6'
 import { PropertyCard,CustomButton } from 'components'
 
@@ -69,6 +69,25 @@ const AllProperties = (props: Props) => {
                 handleClick={()=>{}}
                 backgroundColor={'#475be8'} 
                 color={'#fcfcfc'} />
+                <TextField 
+                  variant='outlined'
+                  color='info'
+                  placeholder='Search by title'
+                  value={""}
+                  onChange={()=>{}}
+                />
+                <Select
+                  variant='outlined'
+                  color="info"
+                  displayEmpty
+                  required
+                  inputProps={{"aria-label":"Without label"}}
+                  defaultValue=""
+                  value=''
+                  onChange={()=>{}}
+                >
+                  <MenuItem value="">All</MenuItem>
+                </Select>
             </Box>
           </Box>  
         </Stack>
