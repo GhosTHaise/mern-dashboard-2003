@@ -25,8 +25,19 @@ const AllProperties = (props: Props) => {
   } = useTable();
   
   const allProperties = data?.data ?? [];
-  console.log(allProperties);
+  //console.log(allProperties);
   
+  const currentPrice = sorter.find((item) => item.field === "price")?.order
+  console.log(currentPrice);
+  
+  const toggleSort = (field : string) => {
+    setSorter([
+      {
+        field, 
+        order : currentPrice === "asc" ? "desc" : "asc"}
+    ])
+  }
+
   if(isLoading) return <Typography>Loading...</Typography>
   if(isError) return <Typography>Error...</Typography>
   return (
@@ -65,8 +76,8 @@ const AllProperties = (props: Props) => {
             mb={{ xs : "20px" , sm : 0}}
             >
                 <CustomButton 
-                title={`Sort price`}
-                handleClick={()=>{}}
+                title={`Sort price ${currentPrice === "asc" ? "↑" : "↓"}`}
+                handleClick={()=> toggleSort("price")}
                 backgroundColor={'#475be8'} 
                 color={'#fcfcfc'} />
                 <TextField 
