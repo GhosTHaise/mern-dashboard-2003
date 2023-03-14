@@ -26,6 +26,7 @@ const getAllProperties = async(req,res) => {
     }
 
     try {
+        console.log(query)
         const count = await Property.countDocuments({query});
         
         const properties = await Property
