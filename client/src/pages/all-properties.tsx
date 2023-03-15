@@ -45,7 +45,8 @@ const AllProperties = (props: Props) => {
       ));
         
       return {
-        title : logicalFilters.find((item) => item.field === "title")?.value || ""
+        title : logicalFilters.find((item) => item.field === "title")?.value || "",
+        propertType : logicalFilters.find((item) => item.field === "propertyType")?.value || ""
       }
   },[filters])
 
@@ -113,10 +114,30 @@ const AllProperties = (props: Props) => {
                   required
                   inputProps={{"aria-label":"Without label"}}
                   defaultValue=""
-                  value=''
-                  onChange={()=>{}}
+                  value={currentFilterValues.propertType}
+                  onChange={(e)=> {
+                    setFilters([
+                      {
+                        field : "propertyType",
+                        operator : "eq",
+                        value : e.target.value ?? undefined
+                      }
+                    ])
+                  }}
                 >
                   <MenuItem value="">All</MenuItem>
+                  {[
+                    "Apartment",
+                    "Villa",
+                    "Farmhouse",
+                    "Condos",
+                    "Townhouse",
+                    "Duplex",
+                    "Studio",
+                    "Chalet"
+                  ].map((type)=>(
+                    <MenuItem key={type} value={type}>{type}</MenuItem>
+                  ))}
                 </Select>
             </Box>
           </Box>  

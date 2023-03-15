@@ -113,15 +113,15 @@ const Form = ({
                     required : true
                   })}
                 >
-                  <MenuItem value="apartment" >Apartment</MenuItem>
-                  <MenuItem value="villa" >Villa</MenuItem>
-                  <MenuItem value="farmhouse" >Farmhouse</MenuItem>
-                  <MenuItem value="condos" >Farmhouse</MenuItem>
-                  <MenuItem value="farmhouse" >Condos</MenuItem>
-                  <MenuItem value="townhouse" >TownHouse</MenuItem>
-                  <MenuItem value="duplex" >Duplex</MenuItem>
-                  <MenuItem value="studio" >Studio</MenuItem>
-                  <MenuItem value="chalet" >Chalet</MenuItem>
+                  <MenuItem value="Apartment" >Apartment</MenuItem>
+                  <MenuItem value="Villa" >Villa</MenuItem>
+                  <MenuItem value="Farmhouse" >Farmhouse</MenuItem>
+                  <MenuItem value="Condos" >Farmhouse</MenuItem>
+                  <MenuItem value="Farmhouse" >Condos</MenuItem>
+                  <MenuItem value="Townhouse" >TownHouse</MenuItem>
+                  <MenuItem value="Duplex" >Duplex</MenuItem>
+                  <MenuItem value="Studio" >Studio</MenuItem>
+                  <MenuItem value="Chalet" >Chalet</MenuItem>
                 </Select>
               </FormControl>
               <FormControl>
