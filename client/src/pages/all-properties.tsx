@@ -35,7 +35,8 @@ const AllProperties = (props: Props) => {
     setSorter([
       {
         field, 
-        order : currentPrice === "asc" ? "desc" : "asc"}
+        order : currentPrice === "asc" ? "desc" : "asc"
+      },
     ])
   }
 
