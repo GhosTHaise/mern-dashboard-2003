@@ -210,7 +210,9 @@ const AllProperties = (props: Props) => {
                   required
                   inputProps={{"aria-label":"Without label"}}
                   defaultValue={10}
-                  onChange={()=>{}}
+                  onChange={(e)=> setPageSize(
+                    e.target.value ? Number(e.target.value) : 10
+                    )}
                 >
                   {
                     [10,20,30,40,50].map((size)=>(
