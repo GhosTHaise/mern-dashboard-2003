@@ -12,7 +12,7 @@ const PropertyDetails = () => {
   const { queryResult } = useShow();
   
   const { data, isLoading, isError } = queryResult;
-  
+  console.log(data)
   return (
     <div>property-details</div>
   )
