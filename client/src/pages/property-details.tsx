@@ -87,28 +87,60 @@ const PropertyDetails = () => {
                  flexWrap={"wrap"}
                  alignItems="center"
                  >
-                    <Typography 
-                    fontSize={22}
-                    fontWeight={600}
-                    color="#11142d"
-                    textTransform="capitalize"
+                    <Box>
+                        <Typography 
+                        fontSize={22}
+                        fontWeight={600}
+                        color="#11142d"
+                        textTransform="capitalize"
 
-                    >
-                        {propertyDetails.title}
-                    </Typography>
-                    <Stack 
-                    mt={0.5}
-                    direction="row"
-                    alignItems="center"
-                    >
-                        <Place sx={{color : "#808191"}} />
-                        <Typography
-                        fontSize={14}
-                        color={"#808191"}
                         >
-                            {propertyDetails.location}
+                            {propertyDetails.title}
                         </Typography>
-                    </Stack>
+                        <Stack 
+                        mt={0.5}
+                        direction="row"
+                        alignItems="center"
+                        >
+                            <Place sx={{color : "#808191"}} />
+                            <Typography
+                            fontSize={14}
+                            color={"#808191"}
+                            >
+                                {propertyDetails.location}
+                            </Typography>
+                        </Stack>
+                    </Box>
+                    <Box>
+                                <Typography
+                                    fontSize={16}
+                                    fontWeight={600}
+                                    mt="10px"
+                                    color="#11142D"
+                                >
+                                    Price
+                                </Typography>
+                                <Stack
+                                    direction="row"
+                                    alignItems="flex-end"
+                                    gap={1}
+                                >
+                                    <Typography
+                                        fontSize={25}
+                                        fontWeight={700}
+                                        color="#475BE8"
+                                    >
+                                        ${propertyDetails.price}
+                                    </Typography>
+                                    <Typography
+                                        fontSize={14}
+                                        color="#808191"
+                                        mb={0.5}
+                                    >
+                                        for one day
+                                    </Typography>
+                                </Stack>
+                            </Box>              
                  </Stack>
               </Box>
           </Box>
