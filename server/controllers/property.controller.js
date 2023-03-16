@@ -89,7 +89,16 @@ const createProperty = async(req,res) => {
 };
 
 const updateProperty = async(req,res) => {};
-const deleteProperty = async(req,res) => {};
+
+const deleteProperty = async(req,res) => {
+    try {
+        const { id } = req.params;
+
+        console.log(req.params)
+    } catch (error) {
+        console,log(error)
+    }
+};
 
 
 export {

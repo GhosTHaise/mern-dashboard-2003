@@ -13,6 +13,6 @@ Router.route("/").get(getAllProperties);
 Router.route("/:id").get(getPropertyDetail);
 Router.route("/").post(createProperty);
 Router.route("/").patch(updateProperty);
-Router.route("/").delete(deleteProperty);
+Router.route("/:id").delete(deleteProperty);
 
 export default Router;
