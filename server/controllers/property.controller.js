@@ -103,10 +103,21 @@ const deleteProperty = async(req,res) => {
         const session = await mongoose.startSession();
         session.startTransaction()
 
+        propertyToDelete.remove({session})
+        propertyToDelete.creator.allProperties.pull(propertyToDelete._id);
 
+        await propertyToDelete.creator.save({session});
+
+        await session.commitTransaction();
+
+        res.status(200).json({
+            message : "Property deleted successfully"
+        });
 
     } catch (error) {
-        console,log(error)
+        res.status(500).json({
+            message : error.message
+        });
     }
 };
 
