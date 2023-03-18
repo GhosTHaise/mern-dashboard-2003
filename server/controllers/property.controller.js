@@ -102,8 +102,10 @@ const deleteProperty = async(req,res) => {
 
         const session = await mongoose.startSession();
         session.startTransaction()
-
-        propertyToDelete.remove({session})
+        
+        //Depreacated
+        //propertyToDelete.remove({session})
+        propertyToDelete.deleteOne({session});
         propertyToDelete.creator.allProperties.pull(propertyToDelete._id);
 
         await propertyToDelete.creator.save({session});
