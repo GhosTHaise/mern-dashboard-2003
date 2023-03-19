@@ -11,10 +11,43 @@ const Agent = (props: Props) => {
 
   const allAgents = data?.data ?? [];
 
+  console.log(allAgents);
+  
   if(isLoading) return <div>Loading ...</div>
   if(isError) return <div>Error ...</div>
   return (
-    <div>agent</div>
+    <Box>
+      <Typography
+        fontSize={25}
+        fontWeight={700}
+        color="#11142d"
+      >
+        Agents List
+      </Typography>
+
+      <Box
+        mt="20px"
+        sx={{
+          display : "flex",
+          flexWrap : "wrap",
+          gap : "20px",
+          backgroundColor : "#fcfcfc"
+        }}
+      >
+        {
+          allAgents.map((agent)=>(
+            <AgentCard 
+              key={agent.id}
+              id={agent._id} 
+              name={agent.name} 
+              email={agent.email} 
+              avatar={agent.avatar} 
+              noOfProperties={agent.allProperties.length}              
+            /> 
+          ))
+        }
+      </Box>
+    </Box>
   )
 }
 
