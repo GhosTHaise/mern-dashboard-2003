@@ -33,7 +33,7 @@ const AgentCard = ({id,name,email,avatar,noOfProperties}: AgentCardProp) => {
   return (
     <Box
      component={Link}
-     to={`/`}
+     to={generateLink()}
      width="100%"
      sx={{
       display : "flex",
