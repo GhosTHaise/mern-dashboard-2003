@@ -13,7 +13,13 @@ const MyProfile = () => {
     if(isError) return <div>Error ...</div>
 
   return (
-    <div>my-profile</div>
+    <Profile 
+    type={"My"} 
+    name={""} 
+    avatar={""} 
+    email={""} 
+    properties={undefined}    
+    />
   )
 }
 
