@@ -105,7 +105,15 @@ const Home = (props: Props) => {
             }}
           >
                 {
-                  
+                  latestProperties.map((property)=>(
+                    <PropertyCard 
+                    key={property._id}
+                    id={property._id}
+                    title={property.title} 
+                    location={property.location} 
+                    price={property.price} 
+                    photo={property.photo} />
+                  ))
                 }
           </Box>
         </Box>
