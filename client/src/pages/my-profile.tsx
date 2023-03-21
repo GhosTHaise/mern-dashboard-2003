@@ -3,9 +3,10 @@ import { Profile } from "components"
 
 const MyProfile = () => {
   const {data : user} = useGetIdentity();
+  
   const {data,isLoading,isError} = useOne({
     resource : "users",
-    id : user?.userid
+    id : user?.userId
   });
 
     const myProfile = data?.data ?? [];
@@ -15,10 +16,10 @@ const MyProfile = () => {
   return (
     <Profile 
     type={"My"} 
-    name={""} 
-    avatar={""} 
-    email={""} 
-    properties={undefined}    
+    name={myProfile.name} 
+    avatar={myProfile.avatar} 
+    email={myProfile.email} 
+    properties={myProfile.allProperties}    
     />
   )
 }
