@@ -12,6 +12,21 @@ import { Box , Typography,Stack } from '@pankod/refine-mui'
 type Props = {}
 
 const Home = (props: Props) => {
+
+  const {data : properties,isLoading,isError} = useList({
+    resource : "properties",
+    config : {
+      pagination : {
+        pageSize : 5
+      }
+    }
+  });
+
+  const latestProperties = properties?.data ?? [];
+
+  if(isLoading) return <Typography>Loading...</Typography>
+  if(isError) return <Typography>Something went wrong!</Typography>
+
   return (
     <Box>
         <Typography 
@@ -64,6 +79,36 @@ const Home = (props: Props) => {
             <TotalRevenue/>
             <PropertyReferrals/>
         </Stack>
+        <Box
+          flex={1}
+          borderRadius="15px"
+          padding="20px"
+          bgcolor={"#fcfcfc"}
+          display="flex"
+          flexDirection={"column"}
+          minWidth="100%"
+          mt="25px"
+        >
+          <Typography
+          fontSize={"18px"}
+          fontWeight={600}
+          color="#11142d"
+          >
+            Latest Properties
+          </Typography>
+          <Box
+            mt={2.5}
+            sx={{
+              display : "flex",
+              flexWrap : "wrap",
+              gap : 4
+            }}
+          >
+                {
+                  
+                }
+          </Box>
+        </Box>
     </Box>
   )
 }
