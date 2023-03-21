@@ -16,7 +16,7 @@ const AgentProfile = () => {
 
   return (
     <Profile 
-    type={"My"} 
+    type={"Agent"} 
     name={myProfile.name} 
     avatar={myProfile.avatar} 
     email={myProfile.email} 
